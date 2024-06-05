@@ -11,8 +11,8 @@
       </li><!-- End Dashboard Nav -->
     
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="bi bi-grid"></i>
+        <a class="nav-link collapsed" href="/admin/student">
+            <i class="bi bi-person"></i>
             <span>Student</span>
         </a>
       </li>
