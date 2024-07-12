@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\KampusController;
+use App\Http\Controllers\FrontendController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /**
  * Method HTTP:
@@ -17,26 +19,47 @@ Route::get('/', function () {
  */
 
 // route untuk menampilkan text
-Route::get('/salam/{nama}', function ($nama) {
-    return "Assalaamualaikum $nama";
+// Route::get('/salam/{nama}', function ($nama) {
+//     return "Assalaamualaikum $nama";
+// });
+
+
+
+Route::get('/', [FrontendController::class, 'home'])->name('frontend.home');
+Route::get('/about', [FrontendController::class, 'about'])->name('frontend.about');
+Route::get('/feature', [FrontendController::class, 'feature'])->name('frontend.feature');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('frontend.contact');
+Route::get('/services', [FrontendController::class, 'services'])->name('frontend.services');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    // Route untuk menampilkan data kampus
+    Route::get('admin/kampus', [KampusController::class, 'index'])->name('kampus.index');
+
+    // Route untuk menampilkan form tambah kampus
+    Route::get('admin/kampus/create', [KampusController::class, 'create'])->name('kampus.create');
+
+    // Route untuk menyimpan data kampus baru
+    Route::post('admin/kampus/store', [KampusController::class, 'store'])->name('kampus.store');
+
+    // Route untuk menampilkan halaman edit kampus
+    Route::get('admin/kampus/edit/{id}', [KampusController::class, 'edit'])->name('kampus.edit');
+
+    // Route untuk menyimpan hasil update kampus
+    // Route::put('admin/kampus/update/{id}', [KampusController::class, 'update']);
+
+    // Route untuk menghapus kampus
+    Route::delete('admin/kampus/delete/{id}', [KampusController::class, 'destroy'])->name('kampus.delete');
+});
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('admin/dashboard', [DashboardController::class, 'index']);
-
-// Route untuk menambahkan student
-Route::get('admin/student', [StudentController::class, 'index']);
-
-// Route untuk menampilkan form tambah student
-Route::get('admin/student/create', [StudentController::class, 'create']);
-
-// Route untuk mengirim data student
-Route::post('admin/student/store', [StudentController::class, 'store']);
-
-// Route untuk menampilkan halaman edit student
-Route::get('admin/student/edit/{id}', [StudentController::class, 'edit']);
-
-// Route untuk menyimpan hasil updete student
-Route::put('admin/student/update/{id', [StudentController::class, 'update']);
-
-// Route untuk menghapus student
-Route::delete('admin/student/delete/{id}', [StudentController::class, 'destroy']);
+require __DIR__.'/auth.php';

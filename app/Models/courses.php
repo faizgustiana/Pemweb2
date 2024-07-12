@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class courses extends Model
 {
     use HasFactory;
+
+    // mendefinisikan field yang boleh diisi
+    protected $fillable = ['name', 'description', 'category'];
 }

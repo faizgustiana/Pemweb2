@@ -11,9 +11,9 @@
       </li><!-- End Dashboard Nav -->
     
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/admin/student">
+        <a class="nav-link collapsed" href="/admin/kampus">
             <i class="bi bi-person"></i>
-            <span>Student</span>
+            <span>Kampus</span>
         </a>
       </li>
     </ul>

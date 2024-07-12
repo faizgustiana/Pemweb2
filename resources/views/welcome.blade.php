@@ -1,172 +1,869 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>Laravel</title>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+  <title>NF-Parking</title>
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-        </style>
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.css')}}" />
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto:400,700&display=swap" rel="stylesheet">
 
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
+  <!-- Custom styles for this template -->
+  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet" />
+</head>
 
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
+<body>
+  <div class="hero_area" >
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="{{asset('frontend/images/NF.png')}}" width="40px">
+            <span>
+              NF-Parking
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
-                </div>
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url('welcome')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('frontend.about')}}"> About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('feature')}}"> Features </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('services')}}"> Services </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url('contact')}}">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('login')}}">Login</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
             </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section ">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="detail-box">
+                <h1 style="color: orangered;">
+
+                  Parkirkan kendaraan anda  <br>
+                  di tempat kami
+                </h1>
+                <p>
+                 Tempat parkir khusus Mahasiswa STT NF. Memiliki lahan yang luas, teduh dan dijaga dengan tingkat keamanan yang tinggi
+                 memiliki sucurity dan CCTV yang aktif 24 jam.
+                <div>
+                  <a href="">
+                    Contact us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="detail-box">
+                <h1 style="color: orangered;">
+
+                  Parkirkan kendaraan anda <br>
+                  di tempat kami
+                </h1>
+                <p>
+                  Tempat parkir khusus Mahasiswa STT NF. Memiliki lahan yang luas, teduh dan dijaga dengan tingkat keamanan yang tinggi
+                  memiliki sucurity dan CCTV yang aktif 24 jam.
+                </p>
+                <div>
+                  <a href="">
+                    Contact us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- find section -->
+  <section class="find_section">
+    <div class="container">
+      <form action="">
+        <div class=" form-row">
+          <div class="col-lg-3">
+            <label for="carPark">Select Park</label>
+            <select name="" id="carPark" class="form-control">
+              <option value="">First Floor</option>
+              <option value="">Second Floor</option>
+              
+            </select>
+          </div>
+          <div class="col-lg-3">
+            <label for="parkingName">Your Name Here</label>
+            <input type="text" class="form-control" placeholder="your name " id="parkingName">
+          </div>
+
+          <div class="col-lg-3">
+            <label for="parkingNumber">Your Phone Number</label>
+            <input type="text" class="form-control" placeholder="+01 1234567890 " id="parkingNumber">
+          </div>
+          <div class="col-lg-3">
+            <div class="btn-container">
+              <button type="submit" class="">
+                Request a call
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- end find section -->
+
+  <!-- feature section -->
+  <section class="feature_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{asset('frontend/images/money.png')}}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Save Money
+              </h5>
+              <p>
+                Gratis untuk Mahasiswa STT NF
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{asset('frontend/images/clock.png')}}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Save Time
+              </h5>
+              <p>
+                Tempat parkir mudah di akses
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{asset('frontend/images/man.png')}}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Save Stress
+              </h5>
+              <p>
+               Tempat parkir luas dan nyaman
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end feature section -->
+
+  <!-- why section -->
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Why Choose Us
+              </h2>
+            </div>
+
+            <p>
+              Kami memiliki lahan untuk menampun lebihdari 300 kendaraan yang memiliki pengamnan yang memadai.
+              Tempat kami juga memiliki akses yang mudah, nyaman dan strategis.
+            </p>
+            <div>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="img-box">
+                  <img src="{{asset('frontend/images/w-1.jpg')}}" alt="">
+                  <a href="">
+                    <img src="{{asset('frontend/images/link.png')}}" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="img-box">
+                  <img src="{{asset('frontend/images/w-2.jpg')}}" alt="">
+                  <a href="">
+                    <img src="{{asset('frontend/images/link.png')}}" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="img-box">
+                  <img src="{{asset('frontend/images/w-3.jpg')}}" alt="">
+                  <a href="">
+                    <img src="{{asset('frontend/images/link.png')}}" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="img-box">
+                  <img src="{{asset('frontend/images/w-4.jpg')}}" alt="">
+                  <a href="">
+                    <img src="{{asset('frontend/images/link.png')}}" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end why section -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Services
+        </h2>
+      </div>
+      
+      <div class="box">
+        <div class="img-box">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+            <g>
+              <g>
+                <path d="M510.329,332.836c-0.203-0.668-0.422-1.322-0.657-1.963c-5.489-15.085-19.959-25.221-36.008-25.221
+               c-4.435,0-8.819,0.773-13.034,2.297c-34.814,12.605-121.378,41.922-173.185,41.922c-13.094,0-18.181-9.793-20.103-18.657
+               c34.826,0.007,50.883,0.007,53.772,0.007c17.766,0,34.087-9.258,42.594-24.16c4.034-7.063,6.166-15.182,6.166-23.48
+               c0-7.922-3.365-21.639-25.904-24.491c-0.08-0.01-0.16-0.019-0.24-0.027l-127.188-12.989c-25.95-3.216-51.731,5.251-70.746,23.251
+               c-11.622,11.019-27.042,13.833-47.799,14.167V262.44c0-5.523-4.477-10-10-10H10c-5.523,0-10,4.477-10,10v182.659
+               c0,5.523,4.477,10,10,10h77.999c5.523,0,10-4.477,10-10v-32h32.93c21.428,0,43.167,9.422,64.188,18.534
+               c20.569,8.915,39.998,17.336,59.169,17.336c0.158,0,0.316-0.004,0.475-0.011c26.976-1.282,89.594-10.517,205.878-57.957
+               c9.243-3.767,18.7-7.724,28.108-11.76c0-0.001,0-0.001,0.001-0.001C506.746,371.516,516.026,351.568,510.329,332.836z
+                M77.999,402.373c0,0.336,0,0.581,0,0.728v32h-19V331.262c0-5.523-4.477-10-10-10c-5.523,0-10,4.477-10,10v103.839H20V272.441
+               h57.999V402.373z M480.86,360.861c-3.833,1.645-7.673,3.271-11.504,4.881l-7.103-12.518c-2.727-4.804-8.83-6.488-13.633-3.762
+               c-4.803,2.726-6.487,8.829-3.762,13.632l5.87,10.344c-111.633,45.331-171.021,54.273-196.672,55.531
+               c-14.974-0.077-32.469-7.66-50.986-15.686c-21.827-9.461-46.566-20.183-72.142-20.183H98c0.001-20.968,0.006-68.796,0.008-89.597
+               c20.808-0.268,43.729-2.768,61.544-19.66c14.677-13.893,34.588-20.42,54.621-17.91c0.076,0.01,0.152,0.018,0.228,0.026
+               l85.262,8.707v16.101c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10v-14.059l21.912,2.238c8.301,1.067,8.301,2.881,8.301,4.635
+               c0,4.893-1.189,9.456-3.534,13.563c-4.957,8.683-14.622,14.077-25.226,14.077c-3.181,0-22.319,0-64.877-0.01
+               c-0.001,0-0.002,0-0.003,0c-2.676,0-5.241,1.073-7.12,2.978c-1.88,1.906-2.917,4.486-2.879,7.163
+               c0.415,29.474,16.589,48.518,41.208,48.518c54.974,0,144.187-30.153,179.991-43.115c2.024-0.732,4.119-1.104,6.227-1.104
+               c7.671,0,14.589,4.846,17.223,12.084c0.114,0.313,0.216,0.619,0.309,0.925C493.92,347.619,489.477,357.163,480.86,360.861z" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M58.799,296.31c-0.121-0.64-0.32-1.27-0.57-1.87c-0.25-0.61-0.56-1.19-0.92-1.73c-0.36-0.55-0.78-1.06-1.24-1.52
+               c-0.46-0.46-0.97-0.88-1.52-1.24c-0.54-0.36-1.12-0.67-1.72-0.92c-0.61-0.25-1.24-0.44-1.88-0.57c-1.28-0.26-2.61-0.26-3.9,0
+               c-0.64,0.13-1.27,0.32-1.87,0.57c-0.61,0.25-1.19,0.56-1.73,0.92c-0.55,0.36-1.06,0.78-1.52,1.24c-0.46,0.46-0.88,0.97-1.24,1.52
+               c-0.36,0.54-0.67,1.12-0.92,1.73c-0.25,0.6-0.44,1.23-0.57,1.87c-0.13,0.64-0.2,1.3-0.2,1.95s0.07,1.31,0.2,1.96
+               c0.13,0.63,0.32,1.26,0.57,1.87c0.25,0.6,0.56,1.18,0.92,1.72c0.36,0.55,0.78,1.06,1.24,1.52s0.97,0.88,1.52,1.25
+               c0.54,0.36,1.12,0.67,1.73,0.92c0.6,0.25,1.23,0.44,1.87,0.57s1.3,0.19,1.95,0.19c0.65,0,1.31-0.06,1.95-0.19s1.27-0.32,1.88-0.57
+               c0.6-0.25,1.18-0.56,1.72-0.92c0.55-0.37,1.06-0.79,1.52-1.25c0.46-0.46,0.88-0.97,1.24-1.52c0.36-0.54,0.67-1.12,0.92-1.72
+               c0.25-0.61,0.45-1.24,0.57-1.87c0.13-0.65,0.2-1.31,0.2-1.96S58.929,296.95,58.799,296.31z" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M407.109,56.901c-39.333,0-73.672,21.768-91.621,53.884h-43.288c-2.55,0-5.004,0.974-6.859,2.724l-8.345,7.866
+               l-8.343-7.866c-1.855-1.749-4.309-2.724-6.86-2.724h-17.068c-2.55,0-5.004,0.974-6.859,2.724l-8.345,7.866l-8.343-7.866
+               c-1.855-1.749-4.31-2.724-6.86-2.724h-17.069c-2.55,0-5.004,0.974-6.86,2.724l-8.344,7.866l-8.344-7.866
+               c-1.856-1.749-4.31-2.724-6.86-2.724h-24.332c-3.134,0-6.086,1.469-7.977,3.969l-31,41c-2.698,3.568-2.698,8.494,0,12.063l31,41
+               c1.89,2.5,4.843,3.969,7.977,3.969h192.977c17.949,32.118,52.288,53.885,91.621,53.885c57.833,0,104.884-47.051,104.884-104.885
+               S464.943,56.901,407.109,56.901z M127.487,192.785l-23.439-31l23.439-31h15.386l12.315,11.609c3.852,3.632,9.867,3.632,13.72,0
+               l12.314-11.609h9.128l12.314,11.609c3.851,3.63,9.866,3.631,13.719,0l12.315-11.609h9.127l12.314,11.609
+               c3.853,3.631,9.867,3.631,13.719,0l12.315-11.609h30.702c-1.727,5.573-2.957,11.276-3.723,17.081
+               c-0.041,0.307-0.082,0.613-0.121,0.92c-0.081,0.659-0.158,1.318-0.227,1.98c-0.035,0.339-0.066,0.679-0.099,1.019H176.36
+               c-5.523,0-10,4.477-10,10s4.477,10,10,10h126.344c0.032,0.34,0.063,0.68,0.099,1.019c0.069,0.661,0.146,1.321,0.227,1.98
+               c0.038,0.307,0.08,0.614,0.121,0.92c0.766,5.804,1.996,11.508,3.723,17.081H127.487z M407.109,246.67
+               c-45.319,0-82.455-35.699-84.769-80.453c-0.004-0.076-0.006-0.153-0.009-0.229c-0.068-1.393-0.107-2.794-0.107-4.203
+               c0-1.41,0.038-2.81,0.107-4.203c0.004-0.076,0.005-0.153,0.009-0.229c2.314-44.753,39.45-80.452,84.769-80.452
+               c46.805,0,84.884,38.079,84.884,84.884S453.915,246.67,407.109,246.67z" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M428.135,112.468c-27.194,0-49.317,22.124-49.317,49.317s22.124,49.317,49.317,49.317s49.317-22.124,49.317-49.317
+               S455.329,112.468,428.135,112.468z M428.135,191.102c-16.166,0-29.318-13.152-29.318-29.318s13.152-29.318,29.318-29.318
+               s29.318,13.152,29.318,29.318S444.301,191.102,428.135,191.102z" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M153.167,159.832c-0.13-0.64-0.32-1.27-0.57-1.87c-0.25-0.6-0.56-1.19-0.92-1.73c-0.37-0.54-0.79-1.06-1.25-1.52
+               c-0.46-0.46-0.97-0.88-1.52-1.24c-0.54-0.36-1.12-0.67-1.72-0.92c-0.61-0.25-1.24-0.44-1.87-0.57c-1.29-0.26-2.62-0.26-3.91,0
+               c-0.64,0.13-1.27,0.32-1.87,0.57c-0.61,0.25-1.19,0.56-1.73,0.92c-0.55,0.36-1.06,0.78-1.52,1.24c-0.46,0.46-0.88,0.98-1.24,1.52
+               c-0.36,0.54-0.67,1.13-0.92,1.73s-0.44,1.23-0.57,1.87c-0.13,0.64-0.2,1.3-0.2,1.95c0,0.66,0.07,1.31,0.2,1.96
+               c0.13,0.64,0.32,1.26,0.57,1.87c0.25,0.6,0.56,1.18,0.92,1.72c0.36,0.55,0.78,1.06,1.24,1.52c0.46,0.47,0.97,0.88,1.52,1.25
+               c0.539,0.36,1.12,0.67,1.73,0.92c0.6,0.25,1.23,0.44,1.87,0.57s1.3,0.19,1.95,0.19c0.65,0,1.31-0.06,1.96-0.19
+               c0.63-0.13,1.26-0.32,1.87-0.57c0.6-0.25,1.18-0.56,1.72-0.92c0.55-0.37,1.06-0.78,1.52-1.25c0.46-0.46,0.88-0.97,1.25-1.52
+               c0.36-0.54,0.67-1.12,0.92-1.72c0.25-0.61,0.44-1.23,0.57-1.87c0.13-0.65,0.19-1.3,0.19-1.96
+               C153.357,161.132,153.297,160.472,153.167,159.832z" />
+              </g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+          </svg>
+        </div>
+        <div class="detail-box">
+          <h5>
+            Concierge Options
+          </h5>
+          <p>
+  ketersediaan tempat parkir di
+            lokasi hanya dengan menggunakan situs web yang terintegrasi
+          </p>
+          <div>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.017 55.017" style="enable-background:new 0 0 55.017 55.017;" xml:space="preserve">
+            <g>
+              <path d="M51.688,23.013H40.789c-0.553,0-1,0.447-1,1s0.447,1,1,1h9.102l2.899,27H2.268l3.403-27h9.118c0.553,0,1-0.447,1-1
+             s-0.447-1-1-1H3.907L0,54.013h55.017L51.688,23.013z" />
+              <path d="M26.654,38.968c-0.147,0.087-0.304,0.164-0.445,0.255c-0.22,0.142-0.435,0.291-0.646,0.445
+             c-0.445,0.327-0.541,0.953-0.215,1.398c0.196,0.267,0.5,0.408,0.808,0.408c0.205,0,0.412-0.063,0.591-0.193
+             c0.178-0.131,0.359-0.257,0.548-0.379c0.321-0.208,0.662-0.403,1.014-0.581c0.468-0.237,0.658-0.791,0.462-1.269
+             c0.008-0.008,0.018-0.014,0.025-0.022c1.809-1.916,7.905-9.096,10.429-21.058c0.512-2.426,0.627-4.754,0.342-6.919
+             c-0.86-6.575-4.945-10.051-11.813-10.051c-6.866,0-10.951,3.476-11.813,10.051c-0.284,2.166-0.169,4.494,0.343,6.919
+             C18.783,29.818,24.783,36.97,26.654,38.968z M17.924,11.314c0.733-5.592,3.949-8.311,9.831-8.311c5.883,0,9.098,2.719,9.83,8.311
+             c0.255,1.94,0.148,4.043-0.316,6.247C35,28.314,29.59,35.137,27.755,37.207c-1.837-2.072-7.246-8.898-9.514-19.646
+             C17.776,15.357,17.67,13.255,17.924,11.314z" />
+              <path d="M27.755,19.925c4.051,0,7.346-3.295,7.346-7.346s-3.295-7.346-7.346-7.346s-7.346,3.295-7.346,7.346
+             S23.704,19.925,27.755,19.925z M27.755,7.234c2.947,0,5.346,2.398,5.346,5.346s-2.398,5.346-5.346,5.346s-5.346-2.398-5.346-5.346
+             S24.808,7.234,27.755,7.234z" />
+              <path d="M31.428,37.17c-0.54,0.114-0.884,0.646-0.769,1.187c0.1,0.47,0.515,0.791,0.977,0.791c0.069,0,0.14-0.007,0.21-0.022
+             c0.586-0.124,1.221-0.229,1.886-0.313c0.548-0.067,0.938-0.567,0.869-1.115c-0.068-0.549-0.563-0.945-1.115-0.869
+             C32.763,36.918,32.07,37.033,31.428,37.17z" />
+              <path d="M36.599,37.576c0.022,0.537,0.466,0.957,0.998,0.957c0.015,0,0.029,0,0.044-0.001l2.001-0.083
+             c0.551-0.025,0.979-0.493,0.953-1.044c-0.025-0.553-0.539-0.984-1.044-0.954l-1.996,0.083
+             C37.003,36.557,36.575,37.023,36.599,37.576z" />
+              <path d="M22.433,42.177c-0.514,0.388-1.045,0.761-1.58,1.107c-0.463,0.301-0.595,0.92-0.294,1.384
+             c0.191,0.295,0.513,0.455,0.84,0.455c0.187,0,0.375-0.052,0.544-0.161c0.573-0.372,1.144-0.772,1.695-1.188
+             c0.44-0.333,0.528-0.96,0.196-1.401C23.501,41.936,22.876,41.844,22.433,42.177z" />
+              <path d="M44.72,35.583c-0.338,0.237-0.777,0.409-1.346,0.526c-0.541,0.111-0.889,0.641-0.777,1.182
+             c0.098,0.473,0.514,0.798,0.979,0.798c0.067,0,0.135-0.007,0.203-0.021c0.842-0.174,1.526-0.452,2.096-0.853l0.134-0.098
+             c0.44-0.334,0.527-0.961,0.194-1.401c-0.334-0.44-0.96-0.526-1.401-0.194L44.72,35.583z" />
+              <path d="M8.86,43.402c0.145-0.533-0.171-1.082-0.704-1.226c-0.529-0.149-1.082,0.169-1.226,0.704
+             c-0.126,0.464-0.201,0.938-0.225,1.405C6.7,44.4,6.697,44.516,6.697,44.638c0.001,0.196,0.01,0.392,0.029,0.587
+             c0.053,0.515,0.487,0.898,0.994,0.898c0.033,0,0.067-0.002,0.103-0.005c0.549-0.057,0.949-0.547,0.894-1.097
+             c-0.014-0.131-0.019-0.264-0.02-0.39c0-0.083,0.003-0.166,0.007-0.248C8.72,44.059,8.772,43.728,8.86,43.402z" />
+              <path d="M44.698,27.81c-0.794-0.106-1.604-0.041-2.386,0.181c-0.532,0.149-0.841,0.702-0.69,1.233
+             c0.124,0.441,0.525,0.729,0.961,0.729c0.091,0,0.182-0.012,0.272-0.038c0.52-0.146,1.055-0.192,1.575-0.122
+             c0.562,0.07,1.052-0.311,1.125-0.857C45.629,28.387,45.245,27.884,44.698,27.81z" />
+              <path d="M46.688,32.764c-0.163,0.527,0.133,1.088,0.66,1.25c0.099,0.031,0.197,0.045,0.295,0.045c0.428,0,0.823-0.275,0.955-0.705
+             c0.099-0.318,0.16-0.641,0.183-0.963c0.005-0.083,0.008-0.167,0.008-0.25c0-0.468-0.086-0.937-0.255-1.392
+             c-0.192-0.519-0.771-0.781-1.285-0.59c-0.519,0.192-0.782,0.768-0.59,1.285c0.086,0.232,0.13,0.467,0.13,0.696l-0.003,0.117
+             C46.774,32.423,46.742,32.589,46.688,32.764z" />
+              <path d="M17.481,45.164c-0.586,0.275-1.183,0.53-1.774,0.759c-0.515,0.198-0.771,0.777-0.572,1.293
+             c0.153,0.396,0.531,0.64,0.933,0.64c0.12,0,0.242-0.021,0.36-0.067c0.635-0.245,1.275-0.519,1.903-0.813
+             c0.5-0.234,0.715-0.83,0.48-1.33C18.578,45.145,17.984,44.928,17.481,45.164z" />
+              <path d="M10.201,41.001c0.161,0,0.325-0.039,0.478-0.122c0.288-0.157,0.595-0.255,0.911-0.289c0.135-0.016,0.273-0.016,0.406,0.002
+             c0.563,0.073,1.05-0.313,1.122-0.86c0.072-0.548-0.313-1.05-0.86-1.122c-0.298-0.039-0.601-0.041-0.891-0.008
+             c-0.574,0.063-1.128,0.239-1.646,0.521c-0.485,0.265-0.664,0.871-0.399,1.356C9.504,40.813,9.847,41.001,10.201,41.001z" />
+              <path d="M9.993,48.842c0.216,0.056,0.436,0.098,0.654,0.124c0.256,0.031,0.512,0.047,0.769,0.047c0.313,0,0.627-0.022,0.94-0.062
+             c0.548-0.069,0.937-0.569,0.867-1.117s-0.567-0.934-1.117-0.867c-0.404,0.052-0.812,0.064-1.216,0.015
+             c-0.132-0.017-0.264-0.042-0.394-0.075c-0.535-0.143-1.08,0.181-1.22,0.716C9.139,48.158,9.459,48.704,9.993,48.842z" />
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+          </svg>
+
+        </div>
+        <div class="detail-box">
+          <h5>
+            Close And Handy
+          </h5>
+          <p>
+            Dekat dengan fasilitas Stt NF
+          </p>
+          <div>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <svg height="512" viewBox="0 0 46 60" width="512" xmlns="http://www.w3.org/2000/svg">
+            <g id="036---Office-Safe">
+              <path id="Shape" d="m43 0h-40c-1.65685425 0-3 1.34314575-3 3v54c0 1.6568542 1.34314575 3 3 3h40c1.6568542 0 3-1.3431458 3-3v-54c0-1.65685425-1.3431458-3-3-3zm1 57c0 .5522847-.4477153 1-1 1h-40c-.55228475 0-1-.4477153-1-1v-54c0-.55228475.44771525-1 1-1h40c.5522847 0 1 .44771525 1 1z" />
+              <path id="Shape" d="m41 4h-36c-.55228475 0-1 .44771525-1 1v50c0 .5522847.44771525 1 1 1h36c.5522847 0 1-.4477153 1-1v-50c0-.55228475-.4477153-1-1-1zm-1 50h-34v-48h34z" />
+              <path id="Shape" d="m29 48c1.1186831.0031551 2.2037744-.3821053 3.07-1.09 1.91012-1.5226436 2.4404276-4.2025609 1.2541616-6.3379238s-3.7417977-3.1009925-6.0437556-2.283685-3.6763884 3.1782658-3.2504868 5.5835952c.4259017 2.4053294 2.5274425 4.1508119 4.9700808 4.1280136zm0-8c1.1057033-.0004129 2.1219995.6074172 2.6447165 1.5817615.5227169.9743444.4671061 2.1572319-.1447165 3.0782385l-1.7-2.26c-.2143594-.2858125-.5649147-.4355547-.9196152-.3928203-.3547006.0427344-.6596589.2714531-.8.6-.1403412.3285469-.0947442.7070078.1196152.9928203l1.69 2.25c-1.1320421.3716181-2.376708.0380924-3.1712515-.8497814-.7945436-.8878738-.9883535-2.1617931-.4938033-3.2457855.4945502-1.0839923 1.5837152-1.7725795 2.7750548-1.7544331z" />
+              <path id="Shape" d="m10.75 46h3.25v3c0 1.6568542 1.3431458 3 3 3h18c1.6568542 0 3-1.3431458 3-3v-12c0-1.6568542-1.3431458-3-3-3h-18c-1.6568542 0-3 1.3431458-3 3v3h-3.25c-1.51650541.0054847-2.7445153 1.2334946-2.75 2.75v.5c.0054847 1.5165054 1.23349459 2.7445153 2.75 2.75zm5.25-9c0-.5522847.4477153-1 1-1h18c.5522847 0 1 .4477153 1 1v12c0 .5522847-.4477153 1-1 1h-18c-.5522847 0-1-.4477153-1-1v-3h3.25c1.5165054-.0054847 2.7445153-1.2334946 2.75-2.75v-.5c-.0054847-1.5165054-1.2334946-2.7445153-2.75-2.75h-3.25zm-6 5.75c.0053858-.4119621.3380379-.7446142.75-.75h8.5c.4119621.0053858.7446142.3380379.75.75v.5c-.0053858.4119621-.3380379.7446142-.75.75h-8.5c-.4119621-.0053858-.7446142-.3380379-.75-.75z" />
+              <path id="Shape" d="m11 26h8c1.6568542 0 3-1.3431458 3-3v-12c0-1.65685425-1.3431458-3-3-3h-8c-1.65685425 0-3 1.34314575-3 3v12c0 1.6568542 1.34314575 3 3 3zm-1-15c0-.5522847.4477153-1 1-1h8c.5522847 0 1 .4477153 1 1v12c0 .5522847-.4477153 1-1 1h-8c-.5522847 0-1-.4477153-1-1z" />
+              <circle id="Oval" cx="13" cy="13" r="1" />
+              <circle id="Oval" cx="17" cy="13" r="1" />
+              <circle id="Oval" cx="13" cy="17" r="1" />
+              <circle id="Oval" cx="17" cy="17" r="1" />
+              <circle id="Oval" cx="13" cy="21" r="1" />
+              <circle id="Oval" cx="17" cy="21" r="1" />
+            </g>
+          </svg>
+
+        </div>
+        <div class="detail-box">
+          <h5>
+            Safe And Secure
+          </h5>
+          <p>
+            Memiliki CCTV yang aktif 24 jam
+          </p>
+          <div>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What Our Customers Say
+        </h2>
+      </div>
+      <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{asset('frontend/images/..')}}" alt="">
+
+              </div>
+              <div class="detail-box">
+                <h6>
+                  person 1
+                </h6>
+                <p>
+                  Tempat parkir yang bagus itu yang gede dan enak diliat, jadi gampang banget nyari tempat
+                   kosong buat parkir mobil atau motor. Kalo tempat parkirnya rapi dan teratur, nggak
+                    pusing deh nyari tempat kosong, langsung keliatan aja. Udah gitu, kalo ada marka 
+                    jalan yang jelas, jadi nggak bingung parkirnya.
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+              
+                <img src="asset('frontend/images/..')}}" alt="">
+                <img src="" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  person 2
+                </h6>
+                <p>
+                  Di tempat parkir yang bagus, pasti ada lampu yang terang benderang.
+                   Jadi, pengendara bisa tenang ninggalin kendaraan di situ tanpa khawatir
+                    kehilangan atau rusak. Selain itu, kalo ada CCTV atau petugas keamanan yang jaga
+                  , tambah aman lagi. Nggak ada yang berani nyolong atau nyusahin kendaraan kita.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+              <img src="asset('frontend/images/..')}}" alt="">
+                <img src="" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  person 3
+                </h6>
+                <p>
+                  Tempat parkir yang bagus juga pasti punya fasilitas tambahan yang bikin pengendara nyaman. 
+                  Misalnya, ada toilet yang bersih dan wangi, jadi kalo lagi butuh buang air kecil bisa langsung ke sana. 
+                  Ada juga tempat istirahat yang enak buat duduk-duduk sebentar atau minum-minum.
+                   Jadi, kalo lagi capek atau butuh refreshing, bisa langsung istirahat di tempat parkirnya.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+               <img src="asset('frontend/images/..')}}" alt="">
+                
+              </div>
+              <div class="detail-box">
+                <h6>
+                  person 4
+                </h6>
+                <p>
+                  Tempat parkir yang bagus juga biasanya punya area hijau di sekitarnya. Jadi, suasana parkirnya seger dan
+                   asri. Buat pengendara, bisa ngambil napas segar atau duduk-duduk santai di sana. 
+                  Bisa bikin mood jadi lebih baik dan nggak terasa bete lagi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- rate section -->
+
+  <section class="rate_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Parking Options and Rates
+        </h2>
+      </div>
+      <div class="rate_container">
+        <div class="box">
+          <div class="detail-box">
+            <div class="price">
+              <h3>
+                Rp <span>20.000</span> /day
+
+              </h3>
+              <h6>
+                Motor
+              </h6>
+            </div>
+            <p>
+             Berlaku untuk pengunjung di luar STT NF
+            </p>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <div class="price">
+              <h3>
+                
+                Rp <span>50.000</span> /day
+
+              </h3>
+              <h6>
+                Mobil
+              </h6>
+            </div>
+            <p>
+              Berlaku untuk pengunjung di luar STT NF
+            </p>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end rate section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Contact Us
+        </h2>
+      </div>
+      <div class="">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <form action="">
+              <div class="contact_form-container">
+                <div>
+                  <div>
+                    <input type="text" placeholder="Name">
+                  </div>
+                  <div>
+                    <input type="email" placeholder="Email">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Phone Number">
+                  </div>
+                  <div class="">
+                    <input type="text" placeholder="Message" class="message_input">
+                  </div>
+                  <div class="mt-5 d-flex justify-content-center ">
+                    <button type="submit">
+                      Send
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h6>
+            Subscribe Now
+          </h6>
+          <p>
+            Anda harus berlangganan pada tempat parkir kami karena kami menyediakan fasilitas yang aman, terjamin, 
+            dan nyaman untuk menyimpan kendaraan Anda dengan harga yang terjangkau.
+          </p>
+          <form action="">
+            <input type="text" placeholder="Enter your email">
+            <div class="d-flex justify-content-end">
+              <button>
+                subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <h6>
+            Information
+          </h6>
+          <ul>
+            <li>
+              <a href="">
+                > Click here for more information
+              </a>
+            </li>
+          </ul>
+        </div>
+       
+        <div class="col-lg-4">
+          <h6>
+            Contact Us
+          </h6>
+          <div class="info_link-box">
+            <a href="">
+              <img src="asset('frontend/images/location.png')}}" alt="">
+              <span> STT Nurul Fiki Kampus B</span>
+            </a>
+            <a href="">
+              <img src="asset('frontend/images/call.png')}}" alt="">
+              <span>+62 865432112</span>
+            </a>
+            <a href="">
+              <img src="asset('frontend/images/envelope.png')}}" alt="">
+              <span> info@nurulfikri.ac.id</span>
+            </a>
+          </div>
+          <div class="info_social">
+            <div>
+              <a href="">
+                <img src="asset('frontend/images/fb.png')}}" alt="">
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="asset('frontend/images/twitter.png')}}" alt="">
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="asset('frontend/images/linkedin.png')}}" alt="">
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="asset('frontend/images/insta.png')}}" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; <span id="displayYear"></span> All Rights Reserved By
+      <a href="">blank</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+
+  <script type="text/javascript" src="{{asset('frontend/js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('frontend/js/bootstrap.js')}}"></script>
+  <script type="text/javascript" src="{{asset('frontend/js/custom.js')}}"></script>
+
+</body>
+
 </html>
